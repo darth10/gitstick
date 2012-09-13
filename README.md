@@ -1,6 +1,6 @@
 # gitstick
 
-gitstick is ticket-tracking tool integrated with git. It provides a web server, along with some command line utilities, for managing tickets.
+gitstick is bug tracking tool integrated with git. It provides a web server, along with some command line utilities, for managing tickets.
 
 Coming soon 
 
