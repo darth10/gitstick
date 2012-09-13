@@ -40,6 +40,3 @@ Coming soon
 * Scalatra
 * JGit
 
-## Copyright
-
-Copyright (c) 2012 Akhil Wali, under MIT license. See [LICENSE](./LICENSE.html).
