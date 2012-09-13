@@ -10,14 +10,12 @@ Run gitstick in a new directory, or an existing git repository
 
     gitstick
 
-Open 'http://localhost:8080/' in a browser.
+Open `http://localhost:8080/` in a browser.
 Enter credentials. In open mode, the password is not checked. A default user is created depending on your global or local git user configuration; the default password is the user name.
 
 ## Documentation
 
-Run `sbt doc` to generate docs.
-
-See [API docs](./scala-2.9.1/api/index.html).
+Run `sbt doc` to generate API documentation. Visit the [wiki]('http://darth10.github.com/wiki').
 
 ## Contributing to gitstick
 
