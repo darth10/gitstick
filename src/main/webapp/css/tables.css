@@ -1,0 +1,42 @@
+table {
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border: #a9a9a9 1px solid;
+	width: 100%;
+	table-layout: fixed;
+}
+table thead tr {
+	text-align: center;
+	font-weight: bold;
+}
+table tr td {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+table tr td.select {
+	width: 40px;
+}
+table tr th.select {
+	background: white;
+	width: 40px;
+}
+table tr.even td {
+	background: #eee;
+}
+table tr.odd td {
+	background: #bbb;
+}
+._filterText {
+	width: 100%;
+	border: #aaaaaa 1px solid;
+	background: #ffffff;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-khtml-border-radius: 4px;
+}
+._filterText:hover, ._filterText:focus {
+	background: #FCF6CF;
+}
+.filterColumns {
+	background: white;
+}

@@ -1,0 +1,71 @@
+- attributes("layout") = ""
+- val ticketId = attributes("ticketId").asInstanceOf[String]
+-@ val title: String = "Add ticket"
+!!!
+
+%html
+  %head
+    %script{:type => "text/javascript", :src => "js/jquery.min.js"}
+    %script{:type => "text/javascript", :src => "js/jquery.noty.js"}
+    %script{:type => "text/javascript", :src => "js/jquery.tagsinput.js"}
+    %script{:type => "text/javascript", :src => "js/jquery.simpletip.js"}
+    %script{:type => "text/javascript", :src => "js/default.js"}
+    %script{:type => "text/javascript", :src => "js/tickets.add.js"}
+    %link{:type => "text/css", :rel => "stylesheet", :href => "css/jquery.noty.css"}
+    %link{:type => "text/css", :rel => "stylesheet", :href => "css/jquery.tagsinput.css"}
+    %link{:type => "text/css", :rel => "stylesheet", :href => "css/noty_theme_default.css"}
+    %link{:type => "text/css", :rel => "stylesheet", :href => "css/style.css"}
+    %link{:type => "text/css", :rel => "stylesheet", :href => "css/tickets.addedit.css"}
+  %body
+    %table{:width => "100%", :id => {ticketId}}
+      %tr
+        %td
+          %table{:width => "100%"}
+            %tr
+              %td{:class => "ticketinputheader"}
+                = "Title"
+              %td
+                %input{:type => "textbox", :id => "title", :class => "ticketinput"}
+            %tr
+              %td{:class => "ticketinputheader"}
+                = "Assigned to"
+              %td
+                %input{:type => "textbox", :id => "assignedto", :class => "ticketinput"}
+            %tr
+              %td{:class => "ticketinputheader"}
+                = "Tags"
+              %td
+                %input{:type => "textbox", :id => "tags", :class => "ticketinput"}
+            %tr
+              %td{:class => "ticketinputheader"}
+                = "State"
+              %td
+                #states
+                  %div{:id => "openstate", :class =>"stateinput"}
+                    %input{:type => "radio", :name => "state", :value => "open", :checked => "true"}
+                      = "open"
+                  %div{:id => "resolvedstate", :class =>"stateinput"}
+                    %input{:type => "radio", :name => "state", :value => "resolved"}
+                      = "resolved"
+                  %div{:id => "holdstate", :class =>"stateinput"}
+                    %input{:type => "radio", :name => "state", :value => "hold"}
+                      = "hold"
+                  %div{:id => "ignoredstate", :class =>"stateinput"}
+                    %input{:type => "radio", :name => "state", :value => "ignored"}
+                      = "ignored"
+            %tr
+              %td{:class => "ticketinputheader"}
+                = "Add Comment"
+              %td
+                %table{:width => "100%"}
+                  %tr
+                    %td{:width => "80%"}
+                      %textarea{:rows => "6", :cols => "60", :wrap => "virtual", :id => "newcommenttext", :class => "ticketinput"}
+                    %td
+                      #savedelete
+                        %table
+                          %tr
+                            %td                                
+                              #save
+                                %a{:class => "roundbutton", :id => "savebutton"}
+                                  %img{:src => "images/save.png"}

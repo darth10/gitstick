@@ -1,0 +1,15 @@
+.settingstable table tr td.settingname {
+	width: 20%;
+}
+table.settingsform {
+	width: 100%;
+}
+td.settingname {
+	width: 100%;
+}
+.settinginput {
+	border: 1px solid gray;
+	border-radius: 4px;
+	margin-left: 50px;
+	width: 400px;
+}

@@ -1,0 +1,32 @@
+- attributes("headline") = "Settings"
+- val secure = attributes("secure").asInstanceOf[Boolean]
+!!!
+
+%link{:type => "text/css", :rel => "stylesheet", :href => "css/settings.css"}
+%script{:type => "text/javascript", :src => "js/sha1.js"}
+%script{:type => "text/javascript", :src => "js/settings.js"}
+%div{:class => "settingstable"}
+  %table{:class => "settingsform"}
+    %tr
+      %td{:class => "settingname"}
+        = "Email"
+      %td
+        %input{:type => "textbox", :id => "email", :class => "settinginput"}
+    - if (secure)
+      %tr
+        %td
+          = "Password"
+        %td
+          %input{:type => "password", :id => "oldpassword", :class => "settinginput"}
+      %tr
+        %td
+          = "New password"
+        %td
+          %input{:type => "password", :id => "newpassword", :class => "settinginput"}
+      %tr
+        %td
+          = "Confirm new password"
+        %td
+          %input{:type => "password", :id => "confirmnewpassword", :class => "settinginput"}
+%div{:class => "saveprogress"}
+  %table

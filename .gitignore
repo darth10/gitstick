@@ -1,0 +1,13 @@
+
+/target
+/.settings
+/.cache
+/project/project
+/project/target
+/.project
+/.classpath
+/.history
+*.swp
+.ensime
+.ensime_lucene/
+

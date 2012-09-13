@@ -1,0 +1,10 @@
+table tr td.time {
+	text-align: center;
+	width: 30%;
+}
+table tr td.message {
+	width: 40%;
+}
+table tr td.author {
+	text-align: center;
+}

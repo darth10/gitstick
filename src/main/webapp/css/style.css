@@ -1,0 +1,108 @@
+html {
+	font-family: sans-serif;
+}
+.roundbutton {
+	width: 80px;
+	height: 80px;
+	display: block;
+	border-radius: 40px;
+	-moz-border-radius: 40px;
+	-webkit-border-radius: 40px;
+	-khtml-border-radius: 40px;
+	font-size: 20px;
+	color: #000;
+	margin: 10px;
+	line-height: 75px;
+	text-decoration: none;
+	text-align: center;
+	background: #bbb
+}
+.roundbutton img {
+	border: none;
+	padding-top: 25px;
+}
+.roundbutton:hover {
+	color: gray;
+	cursor: pointer;
+	text-decoration: none;
+	background: #eee;
+}
+.tooltip {
+	color: #000;
+	position: absolute;
+	padding-left: 20px;
+	padding-right: 20px;
+	top: 0;
+	left: 0;
+	z-index: 3;
+	background: #bbb;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	display: none;
+}
+.odd {
+	background: #bbb;
+}
+#headertitle h1 {
+	background: gray;
+	min-width: 640px;
+	height: 100px;
+	line-height: 100px;
+	text-indent: 40px;
+	-moz-border-radius: 35px;
+	-webkit-border-radius: 35px;
+}
+#navigation {
+	min-width: 600px;
+}
+#navigation li {
+	display: block;
+	float: right;
+}
+#navigation li a {
+	vertical-align: middle;
+}
+#page {
+	margin: 10px;
+	width: 97%;
+	min-width: 640px;
+	position: absolute;
+}
+#toolbar {
+	min-width: 500px;
+}
+#toolbar ul {
+	min-width: 600px;
+}
+#toolbar ul li {
+	display: block;
+	float: right;
+}
+#navigation ul li a {
+	vertical-align: middle;
+}
+#toolbar h2 {
+	text-align: left;
+	background: white;
+	min-width: 600px;
+	line-height: 100px;
+	text-indent: 40px;
+}
+input[type=textbox]:hover, input[type=textbox]:focus {
+	background: #FCF6CF;
+}
+input[type=textbox] {
+	background: white;
+}
+input[type=password]:hover, input[type=password]:focus {
+	background: #FCF6CF;
+}
+input[type=password] {
+	background: white;
+}
+textarea:hover, textarea:focus {
+	background: #FCF6CF;
+}
+textarea {
+	background: white;
+}

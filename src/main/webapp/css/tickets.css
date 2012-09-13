@@ -1,0 +1,42 @@
+#tagsdialog table {
+	border: 0px;
+}
+table tbody tr:hover {
+	cursor: pointer;
+}
+table thead tr th.state {
+	width: 10%;
+}
+table tr td.assigned {
+	width: 30%;
+}
+table tr td.title {
+	width: 30%;
+}
+table tr td.time {
+	text-align: center;
+	width: 30%;
+}
+table tr td.open {
+	text-align: center;
+	background: #aaddaa;
+	width: 20%;
+}
+table tr td.resolved {
+	text-align: center;
+	background: #aabbdd;
+	width: 20%;
+}
+table tr td.hold {
+	text-align: center;
+	background: #ddddaa;
+	width: 20%;
+}
+table tr td.ignored {
+	text-align: center;
+	background: #aaaaaa;
+	width: 20%;
+}
+table tr.alltags {
+	background: #AABBEE;
+}

@@ -1,0 +1,68 @@
+.ticketinput {
+	border: 1px solid gray;
+	border-radius: 4px;
+	width: 95%;
+	padding: 5px;
+	margin-left: 5px;
+}
+.ticketinputheader {
+	width: 15%;
+}
+.ticketreadonly {
+	padding: 5px;
+}
+td.comment {
+	border-radius: 5px;
+	padding: 2px;
+	background: #AAAAAA;
+	word-wrap: break-word;
+	max-width: 300px;
+}
+.text {
+	padding: 10px;
+}
+.user {
+	float: left;
+	border-radius: 5px;
+	background: gray;
+	color: white;
+	padding: 5px;
+}
+.time {
+	float: right;
+	border-radius: 5px;
+	background: gray;
+	color: white;
+	padding: 5px;
+}
+.stateinput {
+	border-radius: 5px;
+	padding: 2px;
+	margin: 6px;
+	width: 96%;
+}
+#openstate {
+	background: #aaddaa;
+}
+#resolvedstate {
+	background: #aabbdd;
+}
+#holdstate {
+	background: #ddddaa;
+}
+#ignoredstate {
+	background: #aaaaaa;
+}
+#savedelete {
+	float: right;
+}
+#commentstitle {
+	padding-top: 50px;
+	vertical-align: top;
+}
+#commentstable {
+	padding: 5px;
+}
+#commenttemplate {
+	visibility: collapse;
+}

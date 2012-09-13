@@ -1,0 +1,39 @@
+-@ val title: String = "gitstick"
+-@ val headline: String = title
+-@ val body: String
+!!!
+
+%html
+  %head
+    %title = title
+    %script{:type => "text/javascript", :src => "js/jquery.min.js"}
+    %script{:type => "text/javascript", :src => "js/jquery.ui.min.js"}
+    %script{:type => "text/javascript", :src => "js/jquery.simpletip.js"}
+    %script{:type => "text/javascript", :src => "js/jquery.noty.js"}
+    %script{:type => "text/javascript", :src => "js/jquery.columnfilters.js"}
+    %script{:type => "text/javascript", :src => "js/default.js"}
+    %link{:type => "text/css", :rel => "stylesheet", :href => "css/jquery.ui.css"}
+    %link{:type => "text/css", :rel => "stylesheet", :href => "css/jquery.noty.css"}
+    %link{:type => "text/css", :rel => "stylesheet", :href => "css/noty_theme_default.css"}
+    %link{:type => "text/css", :rel => "stylesheet", :href => "css/style.css"}
+  %body
+    #header
+      %ul{:id => "navigation"}
+        %li
+          %a{:href => "tickets.index", :class => "roundbutton", :id => "tickets"}
+            %img{:src => "images/tickets.png"}
+        %li
+          %a{:href => "log.index", :class => "roundbutton", :id => "log"}
+            %img{:src => "images/log.png"}
+        %li
+          %a{:href => "settings.index", :class => "roundbutton", :id => "settings"}
+            %img{:src => "images/settings.png"}
+    #headertitle
+      %h1
+        = title
+    #toolbar
+      %ul
+      %h2
+        = headline
+    #page
+      != body
