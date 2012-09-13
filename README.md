@@ -15,7 +15,7 @@ Enter credentials. In open mode, the password is not checked. A default user is 
 
 ## Documentation
 
-Run `sbt doc` to generate API documentation. Visit the [wiki]('http://darth10.github.com/wiki').
+Run `sbt doc` to generate API documentation. Visit the [wiki](http://darth10.github.com/gitstick).
 
 ## Contributing to gitstick
 
