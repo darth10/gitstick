@@ -35,6 +35,10 @@ class TicketSpec extends Specification {
   def is =
     "Ticket" ^
       "should create a new ticket" ! pending ^
+      "should load from a repository folder" ! pending ^
+      "should update ticket state, assigned, tags" ! pending ^
+      "should update add a comment to a ticket" ! pending ^
+      "should delete a ticket" ! pending ^
       "should generate and parse from JSON" ! pending ^
       end
 }
