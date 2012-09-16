@@ -20,14 +20,14 @@ To generate the API documentation, use `sbt doc`.
 
 ## Contributing
 
-[Sbt](http://github.com/harrah/xsbt/wiki) is required for all development.
+[sbt](http://github.com/harrah/xsbt/wiki) is required.
+It's recommended that you use Eclipse or Emacs (with Ensime).
 
 You can start a development server by using the `container:start` sbt command.
-Run tests via the `test` command.
+Use the `test` command to run all tests.
 
-The project can be packaged into a war using `package-war`, or jar using `assembly`.
+The project can be packaged into a war using `package-war`, or a jar using `assembly`.
 
-It's recommended that you use Eclipse or Emacs (with Ensime).
 Use the `eclipse` or `ensime generate` sbt commands to generate project files for Eclipse and Emacs respectively.
 
 ## Credits
