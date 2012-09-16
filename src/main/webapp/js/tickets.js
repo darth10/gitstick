@@ -9,18 +9,29 @@ function addToolbar() {
   $(toolbaritem).find('a').attr('id', 'info').end().find('img').attr('src', 'images/info.png').end().appendTo('#toolbar ul');
 };
 
+function isNonEmpty(e) { 
+  if (e.length > 0) 
+    return true;
+  else
+    return false;
+};
+
 function checkAllTags(e) {
-  if (selectedTags.length == tags.length) {
+  var selectedNonEmptyTags = selectedTags.filter(isNonEmpty);
+
+  if (selectedNonEmptyTags.length == tags.length) {
     $('#tagsdialog table tr.alltags').find('input[name=alltagscheckbox]').attr('checked', true);
+    selectedTags = selectedTags.concat("");
   } else {
     $('#tagsdialog table tr.alltags').find('input[name=alltagscheckbox]').attr('checked', false);
+    selectedTags = selectedTags.filter(isNonEmpty);
   }
 };
 
 function onAllTagsChanged(e) {
   if ($(this).attr('checked')) {
     $('#tagsdialog table').find('input[name=tagcheckbox]').attr('checked', true);
-    selectedTags = tags.slice(0);
+    selectedTags = tags.slice(0).concat("");
   } else {
     $('#tagsdialog table').find('input[name=tagcheckbox]').attr('checked', false);
     selectedTags = [];
@@ -119,14 +130,16 @@ function onTicketClick(e) {
 function checkTags(ticketTags) {
   var toInclude = false;
 
-  if (tags.length > 0) {
+  if (ticketTags.length == 0)  {
+    if(selectedTags.indexOf("") != -1) {
+      toInclude = true;
+    }
+  } else {
     ticketTags.forEach(function(tag) {
       if (selectedTags.indexOf(tag) != -1) {
         toInclude = true;
       }
     });
-  } else {
-    toInclude = true;
   };
 
   return toInclude;
@@ -182,7 +195,7 @@ function fetchAndRenderTickets() {
 function cacheTagsAndLoadTickets(e) {
   tags = JSON.parse(e);
   if (selectedTags.length == 0) {
-    selectedTags = tags.slice(0);
+    selectedTags = tags.slice(0).concat("");
   }
 
   fetchAndRenderTickets();

@@ -98,11 +98,13 @@ class Ticket(var repo: Repository)
     git addFile (name, getAssignedFilename(assignedStr), assignedStr)
     git addFile (name, stateStr, state.name)
 
-    comments map { c =>
+    val cleanComments = comments filter(_.text.length > 0)
+    cleanComments map { c =>
       git addFile (name, getCommentFilename(user email), c text)
     }
 
-    tags map { t =>
+    val cleanTags = tags filter(_.length > 0)
+    cleanTags filter(_.length > 0) map { t =>
       val tagFilename = getTagFilename(t)
       git addFile (name, tagFilename, tagFilename)
     }

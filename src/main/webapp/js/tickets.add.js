@@ -46,6 +46,14 @@ function notifySuccessAndRedirect(e) {
   }
 };
 
+function isTag(e) {
+  if (e.length > 0) {
+  	return true;
+  } else {
+	return false;
+  }
+};
+
 function onSaveClick(e) {
   // TODO implement add ticket JS
   var newComment = [];
@@ -58,9 +66,10 @@ function onSaveClick(e) {
     });
   };
 
+  var newTags = $('#tags').attr('value').split(',').filter(isTag);
   var newTicket = {
     state : $('.stateinput input').filter(':checked=true').attr('value'),
-    tags : $('#tags').attr('value').split(','),
+    tags : newTags,
     assigned : $('#assignedto').attr('value'),
     title : $('#title').attr('value'),
     name : "",
