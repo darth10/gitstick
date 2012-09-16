@@ -19,20 +19,15 @@ Run `sbt doc` to generate API documentation. Visit the [wiki](http://darth10.git
 
 ## Contributing to gitstick
 
-Start server using the jetty container, or using `sbt run`.
+Sbt is required.
 
-    sbt
-    > container:start
+You can start a development server by using the `container:start` sbt command.
+Run tests via the `test` command.
 
-Run tests
+The project can be packaged into a war using `package-war`, or jar using `assembly`.
 
-    sbt test
-
-Generate an eclipse project
-
-    sbt eclipse
-
-Coming soon
+It's recommended that you use Eclipse or Emacs (with Ensime).
+Use the `eclipse` or `ensime generate` sbt commands to generate project files for Eclipse and Emacs respectively.
 
 ## Credits
 
