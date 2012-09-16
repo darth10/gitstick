@@ -15,11 +15,12 @@ Enter credentials. In open mode, the password is not checked. A default user is 
 
 ## Documentation
 
-Run `sbt doc` to generate API documentation. Visit the [wiki](http://darth10.github.com/gitstick).
+Visit the [wiki](http://darth10.github.com/gitstick) for more information.
+To generate the API documentation, use `sbt doc`.
 
-## Contributing to gitstick
+## Contributing
 
-Sbt is required.
+[Sbt](http://github.com/harrah/xsbt/wiki) is required for all development.
 
 You can start a development server by using the `container:start` sbt command.
 Run tests via the `test` command.
@@ -31,7 +32,7 @@ Use the `eclipse` or `ensime generate` sbt commands to generate project files fo
 
 ## Credits
 
-* Ticgit-Ng
-* Scalatra
-* JGit
+* [Ticgit-Ng](http://github.com/schacon/ticgit/wiki)
+* [Scalatra](http://www.scalatra.org/)
+* [JGit](http://www.eclipse.org/jgit/)
 
