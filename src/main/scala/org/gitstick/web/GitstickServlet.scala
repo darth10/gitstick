@@ -40,6 +40,7 @@ class GitstickServlet
   lazy val isSecure = AppState.secureMode.isSecureMode
 
   // TODO implement repository info
+  // FIXME bug when adding ticket with no tags, 1 comment
 
   // tickets
 
@@ -138,6 +139,10 @@ class GitstickServlet
 
   get("/add") {
     handleRequest(renderView("/tickets.add"))
+  }
+
+  get("/info") {
+    handleRequest(renderView("/tickets.info"))
   }
 
   get("/tickets.index") {

@@ -6,6 +6,7 @@ function addToolbar() {
   var toolbaritem = '<li><a class="roundbutton"><img></a><li>';
   $(toolbaritem).find('a').attr('id', 'addticket').end().find('img').attr('src', 'images/addticket.png').end().appendTo('#toolbar ul');
   $(toolbaritem).find('a').attr('id', 'tags').end().find('img').attr('src', 'images/tags.png').end().appendTo('#toolbar ul');
+  $(toolbaritem).find('a').attr('id', 'info').end().find('img').attr('src', 'images/info.png').end().appendTo('#toolbar ul');
 };
 
 function checkAllTags(e) {
@@ -82,7 +83,7 @@ function renderTags(e) {
   $('#tagsdialog table tr').find('input[name=tagcheckbox]').change(onTagChanged);
 };
 
-function showTagsDialog(e) {
+function onTagsClick(e) {
   var tagsDialog = '<div title="Tags" id="tagsdialog"><table></table></div>';
   $(tagsDialog).dialog({
     width : '40%',
@@ -199,7 +200,7 @@ function loadTagsAndTickets(e, ui) {
 
 function onAddTicketClick(e) {
   var iFrame = getIFrame('add', 'add');
-  var ticketDialog = '<div title="add" id="ticketdialog">' + iFrame + '</div>';
+  var ticketDialog = '<div title="Add Ticket" id="ticketdialog">' + iFrame + '</div>';
   $(ticketDialog).dialog({
     width : '80%',
     height : 700,
@@ -209,14 +210,26 @@ function onAddTicketClick(e) {
   });
 };
 
+function onInfoClick(e) {
+  var iFrame = getIFrame('info', 'info');
+  var infoDialog = '<div title="Info" id="infodialog">' + iFrame + '</div>';
+  $(infoDialog).dialog({
+    width : '80%',
+    height : 400,
+    modal : true,
+    draggable : true
+  });
+};
+
 $(document).ready(function() {
   addToolbar();
   setTooltip('#addticket', 'Add Ticket');
   setTooltip('#tags', 'Tags');
+  setTooltip('#info', 'Info');
   showProgress('.ticketstable table', 'ticketsProgress');
   loadTagsAndTickets();
 
-  $('#tags').click(showTagsDialog);
   $('#addticket').click(onAddTicketClick);
-		  
+  $('#tags').click(onTagsClick);
+  $('#info').click(onInfoClick);		  
 });
