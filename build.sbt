@@ -25,8 +25,6 @@ seq(webSettings: _*)
 
 seq(assemblySettings: _*)
 
-seq(LWM.settings: _*)
-
 jarName in assembly := "gitstick.jar"
 
 resolvers ++= Seq(
@@ -43,13 +41,4 @@ resourceGenerators in Compile <+= (resourceManaged, baseDirectory) map { (manage
     to 
   } 
 }
-
-sources in LWM.Config <++= baseDirectory map { d =>
-  (d / "README.md").get++
-  (d / "LICENSE.md").get
-}
-
-LWM.cssFile in LWM.Config <<= baseDirectory(d => Some(d / "project" / "markdown.css" ))
-
-LWM.targetDirectory in LWM.Config <<= baseDirectory(_ / "target")
 
