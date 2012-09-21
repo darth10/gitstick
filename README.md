@@ -1,17 +1,32 @@
 # gitstick
 
-gitstick is a distributed bug tracking tool integrated with git. It provides a web server, along with some command line utilities, for managing tickets.
+gitstick is a distributed bug tracking tool integrated with git.
+It provides a web server and command line interface for managing tickets.
 
-Coming soon 
+All tickets are stored in the *gitstick* branch by default.
+Hence, a project's bugs and source code are both part of the same repository.
+gitstick focuses on collaboration, and supports multiple users through the web interface.
+
+gitstick is written in Scala and jQuery.
+
+## Installation
+
+Download the latest binary distribution from the [downloads page](http://github.com/darth10/gitstick/downloads).
+Extract the archive, and add the output folder to your PATH variable.
 
 ## Usage
 
-Run gitstick in a new directory, or an existing git repository
+Run gitstick in a new directory, or an existing git repository. 
+A default user is created depending on your global or local git user configuration; the default password is the user name.
 
     gitstick
 
-Open `http://localhost:8080/` in a browser.
-Enter credentials. In open mode, the password is not checked. A default user is created depending on your global or local git user configuration; the default password is the user name.
+Open `http://localhost:8080/` in a browser, and enter your username and password.
+
+Note that you should use your default username and password the first time you run gitstick in a repository.
+In open mode, the password is not checked. To use open mode, specify the `--open` option.
+
+Run `gitstick -h` for all options.
 
 ## Documentation
 
