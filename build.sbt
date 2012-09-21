@@ -27,6 +27,8 @@ seq(assemblySettings: _*)
 
 jarName in assembly := "gitstick.jar"
 
+mainClass in assembly := Some("org.gitstick.util.GitstickLauncher")
+
 resolvers ++= Seq(
   "Sonatype OSS Snapshots" at "http://oss.sonatype.org/content/repositories/snapshots/",
   "JGit Repository" at "http://download.eclipse.org/jgit/maven"
@@ -39,6 +41,17 @@ resourceGenerators in Compile <+= (resourceManaged, baseDirectory) map { (manage
   } yield { 
     Sync.copy(from, to) 
     to 
+  } 
+}
+
+mergeStrategy in assembly ~= { 
+  old => { 
+    case "META-INF/NOTICE.txt"  => MergeStrategy.filterDistinctLines 
+    case "META-INF/NOTICE"      => MergeStrategy.filterDistinctLines 
+    case "META-INF/LICENSE.txt" => MergeStrategy.filterDistinctLines 
+    case "META-INF/LICENSE"     => MergeStrategy.filterDistinctLines 
+    case "about.html"     		=> MergeStrategy.filterDistinctLines 
+    case x                      => old(x) 
   } 
 }
 
