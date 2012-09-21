@@ -50,7 +50,7 @@ mergeStrategy in assembly ~= {
     case "META-INF/NOTICE" => MergeStrategy.filterDistinctLines 
     case "META-INF/LICENSE.txt" => MergeStrategy.filterDistinctLines 
     case "META-INF/LICENSE" => MergeStrategy.filterDistinctLines 
-    case "about.html" => MergeStrategy.filterDistinctLines 
+    case "about.html" => MergeStrategy.discard 
     case x => old(x) 
   }
 }
