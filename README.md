@@ -35,4 +35,5 @@ Use the `eclipse` or `ensime generate` sbt commands to generate project files fo
 * [Ticgit-Ng](http://github.com/schacon/ticgit/wiki)
 * [Scalatra](http://www.scalatra.org/)
 * [JGit](http://www.eclipse.org/jgit/)
+* [Jetty](http://jetty.codehaus.org/jetty/)
 
