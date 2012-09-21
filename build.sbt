@@ -46,12 +46,11 @@ resourceGenerators in Compile <+= (resourceManaged, baseDirectory) map { (manage
 
 mergeStrategy in assembly ~= { 
   old => { 
-    case "META-INF/NOTICE.txt"  => MergeStrategy.filterDistinctLines 
-    case "META-INF/NOTICE"      => MergeStrategy.filterDistinctLines 
+    case "META-INF/NOTICE.txt" => MergeStrategy.filterDistinctLines 
+    case "META-INF/NOTICE" => MergeStrategy.filterDistinctLines 
     case "META-INF/LICENSE.txt" => MergeStrategy.filterDistinctLines 
-    case "META-INF/LICENSE"     => MergeStrategy.filterDistinctLines 
-    case "about.html"     		=> MergeStrategy.filterDistinctLines 
-    case x                      => old(x) 
-  } 
+    case "META-INF/LICENSE" => MergeStrategy.filterDistinctLines 
+    case "about.html" => MergeStrategy.filterDistinctLines 
+    case x => old(x) 
+  }
 }
-
