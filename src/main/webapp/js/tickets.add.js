@@ -38,6 +38,7 @@ function notifySuccessAndRedirect(e) {
   notifySuccess('Added ticket successfully');
 
   try {
+    window.parent.selectedTags = [];
     window.parent.loadTagsAndTickets();
     document.location = newTicketId;
   } catch (err) {

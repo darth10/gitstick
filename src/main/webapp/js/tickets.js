@@ -67,11 +67,9 @@ function renderTags(e) {
 
   var addTag = function(t) {
     var rowClass = isEvenRow ? 'even' : 'odd';
-    var row = $(rowTemplate).find('tr').attr('class', rowClass).end().find('td.select').attr('id', t).end().find('td.tag').text(t).end();
-    if (selectedTags.indexOf(t) != -1) {
-      row = row.find('input[name=tagcheckbox]').attr('checked', true).end();
-    }
-    row.find('tr').first().appendTo('#tagsdialog table tbody')
+    var isChecked = selectedTags.indexOf(t) != -1;
+    
+    $(rowTemplate).find('tr').attr('class', rowClass).end().find('td.select').attr('id', t).end().find('td.tag').text(t).end().find('input[name=tagcheckbox]').attr('checked', isChecked).end().find('tr').first().appendTo('#tagsdialog table tbody');
     isEvenRow = !isEvenRow;
   };
 
@@ -81,8 +79,6 @@ function renderTags(e) {
     var tagsHeader = '<thead><tr><th class="select"></th><th>Select tags</th></tr></thead>';
     $(tagsHeader).appendTo('#tagsdialog table');
 
-    var tagsBody = '<table><tbody></tbody></table>';
-    $(tagsBody).find('tbody').appendTo('#tagsdialog table');
     tags.forEach(addTag);
     $('#tagsdialog table').columnFilters({
       excludeColumns : [0]
@@ -95,7 +91,7 @@ function renderTags(e) {
 };
 
 function onTagsClick(e) {
-  var tagsDialog = '<div title="Tags" id="tagsdialog"><table></table></div>';
+  var tagsDialog = '<div title="Tags" id="tagsdialog"><table><tbody></tbody></table></div>';
   $(tagsDialog).dialog({
     width : '40%',
     height : 600,

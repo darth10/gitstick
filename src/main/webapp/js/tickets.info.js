@@ -1,1 +1,1 @@
-funtion e() { }
+function e() { }

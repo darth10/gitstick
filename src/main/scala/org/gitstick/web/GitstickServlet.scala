@@ -40,7 +40,6 @@ class GitstickServlet
   lazy val isSecure = AppState.secureMode.isSecureMode
 
   // TODO implement repository info
-  // TODO test repository with no tags, 1 ticket
 
   // tickets
 
