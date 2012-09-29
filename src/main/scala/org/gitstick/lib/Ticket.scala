@@ -186,8 +186,6 @@ class Ticket(var repo: Repository)
   }
 
   private def addTagWithNoCommit(tag: String) {
-    require(tag.length != 0)
-
     if (!(tags contains (tag))) {
       val tagFilename = getTagFilename(tag)
       git addFile (name, tagFilename, tag)
@@ -196,8 +194,6 @@ class Ticket(var repo: Repository)
   }
 
   private def removeTagWithNoCommit(tag: String) {
-    require(tag.length != 0)
-
     if (tags contains (tag)) {
       val tagFilename = getTagFilename(tag)
       git removeFile (name, tagFilename)

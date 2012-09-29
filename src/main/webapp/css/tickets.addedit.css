@@ -24,15 +24,15 @@ td.comment {
 .user {
 	float: left;
 	border-radius: 5px;
-	background: gray;
-	color: white;
+	background: white;
+	color: black;
 	padding: 5px;
 }
 .time {
 	float: right;
 	border-radius: 5px;
-	background: gray;
-	color: white;
+	background: white;
+	color: black;
 	padding: 5px;
 }
 .stateinput {
