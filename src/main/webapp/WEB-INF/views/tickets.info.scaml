@@ -1,12 +1,45 @@
 - attributes("layout") = ""
 -@ val title: String = "Info"
+-@ val centerAlignStyle: String = "text-align: center;"
 !!!
 
 %html
   %head
     %script{:type => "text/javascript", :src => "js/jquery.min.js"}
+    %script{:type => "text/javascript", :src => "js/jquery.tagsinput.js"}
     %script{:type => "text/javascript", :src => "js/default.js"}
     %script{:type => "text/javascript", :src => "js/tickets.info.js"}
     %link{:type => "text/css", :rel => "stylesheet", :href => "css/jquery.tagsinput.css"}
     %link{:type => "text/css", :rel => "stylesheet", :href => "css/style.css"}
+    %link{:type => "text/css", :rel => "stylesheet", :href => "css/tables.css"}
+    %link{:type => "text/css", :rel => "stylesheet", :href => "css/tickets.addedit.css"}
   %body
+    %input{:type => "textbox", :id => "tags"}
+    %table{:id => "infotable", :width => "100%", :style => "margin-top: 30px;"}
+      %thead
+        %tr
+          %td
+            = "Status"
+          %td
+            = "Tickets" 
+      %tbody
+        %tr{:class => "even", :style => {centerAlignStyle}}
+          %td{:id => "openstate"}
+            = "open"
+          %td{:id => "opencount"}
+            = "..."
+        %tr{:class => "odd", :style => {centerAlignStyle}}
+          %td{:id => "resolvedstate"}
+            = "resolved"
+          %td{:id => "resolvedcount"}
+            = "..."
+        %tr{:class => "even", :style => {centerAlignStyle}}
+          %td{:id => "holdstate"}
+            = "hold"
+          %td{:id => "holdcount"}
+            = "..."
+        %tr{:class => "odd", :style => {centerAlignStyle}}
+          %td{:id => "ignoredstate"}
+            = "ignored"
+          %td{:id => "ignoredcount"}
+            = "..."

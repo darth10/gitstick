@@ -224,7 +224,7 @@ function onInfoClick(e) {
   var infoDialog = '<div title="Info" id="infodialog">' + iFrame + '</div>';
   $(infoDialog).dialog({
     width : '80%',
-    height : 400,
+    height : 300,
     modal : true,
     draggable : true
   });

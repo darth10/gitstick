@@ -39,8 +39,6 @@ class GitstickServlet
   lazy val userList = AppState.repo.userList
   lazy val isSecure = AppState.secureMode.isSecureMode
 
-  // TODO implement repository info
-
   // tickets
 
   get("/:ticketid") {
