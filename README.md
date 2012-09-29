@@ -11,6 +11,8 @@ gitstick is written in Scala and jQuery.
 
 ## Installation
 
+gitstick requires JRE (1.6 or higher) to be installed.
+
 Download the latest binary distribution from the [downloads page](http://github.com/darth10/gitstick/downloads).
 Extract the archive, and add the output folder to your PATH variable.
 
