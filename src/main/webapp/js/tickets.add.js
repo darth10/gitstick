@@ -56,7 +56,6 @@ function isTag(e) {
 };
 
 function onSaveClick(e) {
-  // TODO implement add ticket JS
   var newComment = [];
   var newCommentText = $('#newcommenttext').attr('value');
   if (newCommentText.length != 0) {
