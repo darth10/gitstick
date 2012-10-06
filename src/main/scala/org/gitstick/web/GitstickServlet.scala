@@ -119,7 +119,7 @@ class GitstickServlet
   put("/user/:oldpassword", isJsonRequest(request)) {
     // request body should contain user in json format
     // FIXME username in jsonUser is not checked; a user can change other users' passwords
-    // TODO check if :oldpassword can be empty in open mode
+    // TODO check :oldpassword is empty in open mode
     val password = params get ("oldpassword")
     val jsonUser = request body
 

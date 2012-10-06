@@ -2,23 +2,23 @@ var tickets = [];
 var selectedInfoTags = [];
 
 function nonEmptyTags(tag) {
- if (tag.length == 0) {
-   return false;
- } else{
-   return true;
- }
+  if(tag.length == 0) {
+    return false;
+  } else {
+    return true;
+  }
 };
 
-function onTagsChanged(e, tag) { 
+function onTagsChanged(e, tag) {
   selectedInfoTags = $('#tags').attr('value').split(',').filter(nonEmptyTags);
-  refreshInfo(); 
+  refreshInfo();
 };
 
 function checkState(ticket, state) {
-  if (ticket['state'] == state) {
-  	return true;
+  if(ticket['state'] == state) {
+    return true;
   } else {
-  	return false;
+    return false;
   }
 };
 
@@ -42,12 +42,12 @@ function taggedTickets(ticket) {
   var ticketTags = ticket['tags'];
   var toInclude = false;
 
-  if (selectedInfoTags.length == 0)  {
-      toInclude = true;
+  if(selectedInfoTags.length == 0) {
+    toInclude = true;
   } else {
     selectedInfoTags.forEach(function(tag) {
       toInclude = true;
-      if (ticketTags.indexOf(tag) == -1) {
+      if(ticketTags.indexOf(tag) == -1) {
         toInclude = false;
       };
     });
@@ -66,14 +66,14 @@ function resetInfo() {
 
 function refreshInfo() {
   resetInfo();
-  
-  var filteredTickets = tickets.filter(taggedTickets); 
+
+  var filteredTickets = tickets.filter(taggedTickets);
 
   var openCount = filteredTickets.filter(openTickets).length;
   var resolvedCount = filteredTickets.filter(resolvedTickets).length;
   var holdCount = filteredTickets.filter(holdTickets).length;
   var ignoredCount = filteredTickets.filter(ignoredTickets).length;
-  
+
   $('#opencount').text(openCount);
   $('#resolvedcount').text(resolvedCount);
   $('#holdcount').text(holdCount);
@@ -96,7 +96,7 @@ function fetchAndCacheTickets() {
 };
 
 function checkTickets() {
-  if ((window.parent.tickets == undefined) || (window.parent.tickets.length == 0)) {
+  if((window.parent.tickets == undefined) || (window.parent.tickets.length == 0)) {
     fetchAndCacheTickets();
   } else {
     tickets = window.parent.tickets;
@@ -104,13 +104,14 @@ function checkTickets() {
   }
 };
 
+
 $(document).ready(function() {
   $('#tags').tagsInput({
     defaultText : 'Add tag',
-    width: '98%',
-    height: '12px',
-    onChange: onTagsChanged
+    width : '98%',
+    height : '12px',
+    onChange : onTagsChanged
   });
-  
+
   checkTickets();
 });
