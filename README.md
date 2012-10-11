@@ -14,7 +14,7 @@ gitstick is written in Scala and jQuery.
 *Java Runtime Environment* (1.6 or higher) is required.
 
 Download the latest binary distribution from the [downloads page](http://github.com/darth10/gitstick/downloads).
-Extract the archive, and add the output folder to your PATH variable.
+Extract the archive, and add the output folder to your PATH environment variable.
 
 ## Usage
 
