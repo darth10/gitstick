@@ -49,9 +49,9 @@ function notifySuccessAndRedirect(e) {
 
 function isTag(e) {
   if (e.length > 0) {
-  	return true;
+    return true;
   } else {
-	return false;
+    return false;
   }
 };
 

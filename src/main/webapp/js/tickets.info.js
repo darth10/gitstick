@@ -2,7 +2,7 @@ var tickets = [];
 var selectedInfoTags = [];
 
 function nonEmptyTags(tag) {
-  if(tag.length == 0) {
+  if (tag.length == 0) {
     return false;
   } else {
     return true;
@@ -15,7 +15,7 @@ function onTagsChanged(e, tag) {
 };
 
 function checkState(ticket, state) {
-  if(ticket['state'] == state) {
+  if (ticket['state'] == state) {
     return true;
   } else {
     return false;
@@ -42,12 +42,12 @@ function taggedTickets(ticket) {
   var ticketTags = ticket['tags'];
   var toInclude = false;
 
-  if(selectedInfoTags.length == 0) {
+  if (selectedInfoTags.length == 0) {
     toInclude = true;
   } else {
     selectedInfoTags.forEach(function(tag) {
       toInclude = true;
-      if(ticketTags.indexOf(tag) == -1) {
+      if (ticketTags.indexOf(tag) == -1) {
         toInclude = false;
       };
     });
@@ -96,14 +96,13 @@ function fetchAndCacheTickets() {
 };
 
 function checkTickets() {
-  if((window.parent.tickets == undefined) || (window.parent.tickets.length == 0)) {
+  if ((window.parent.tickets == undefined) || (window.parent.tickets.length == 0)) {
     fetchAndCacheTickets();
   } else {
     tickets = window.parent.tickets;
     refreshInfo();
   }
 };
-
 
 $(document).ready(function() {
   $('#tags').tagsInput({

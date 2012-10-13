@@ -9,8 +9,8 @@ function addToolbar() {
   $(toolbaritem).find('a').attr('id', 'info').end().find('img').attr('src', 'images/info.png').end().appendTo('#toolbar ul');
 };
 
-function isNonEmpty(e) { 
-  if (e.length > 0) 
+function isNonEmpty(e) {
+  if (e.length > 0)
     return true;
   else
     return false;
@@ -68,7 +68,7 @@ function renderTags(e) {
   var addTag = function(t) {
     var rowClass = isEvenRow ? 'even' : 'odd';
     var isChecked = selectedTags.indexOf(t) != -1;
-    
+
     $(rowTemplate).find('tr').attr('class', rowClass).end().find('td.select').attr('id', t).end().find('td.tag').text(t).end().find('input[name=tagcheckbox]').attr('checked', isChecked).end().find('tr').first().appendTo('#tagsdialog table tbody');
     isEvenRow = !isEvenRow;
   };
@@ -126,8 +126,8 @@ function onTicketClick(e) {
 function checkTags(ticketTags) {
   var toInclude = false;
 
-  if (ticketTags.length == 0)  {
-    if(selectedTags.indexOf("") != -1) {
+  if (ticketTags.length == 0) {
+    if (selectedTags.indexOf("") != -1) {
       toInclude = true;
     }
   } else {
@@ -240,5 +240,5 @@ $(document).ready(function() {
 
   $('#addticket').click(onAddTicketClick);
   $('#tags').click(onTagsClick);
-  $('#info').click(onInfoClick);		  
+  $('#info').click(onInfoClick);
 });
