@@ -40,12 +40,11 @@ To generate the API documentation, use `sbt doc`.
 [sbt](http://github.com/harrah/xsbt/wiki) is required.
 It's recommended that you use Eclipse or Emacs (with Ensime).
 
-You can start a development server by using the `container:start` sbt command.
-Use the `test` command to run all tests.
-
-The project can be packaged into a war using `package-war`, or a jar using `assembly`.
-
-Use the `eclipse` or `ensime generate` sbt commands to generate project files for Eclipse and Emacs respectively.
+* You can start the development server by using the `container:start` sbt command. 
+* Use the `test` command to run all tests.
+* The project can be packaged into a war using `package-war`, or a jar using `assembly`.
+* Use the `eclipse` or `ensime generate` sbt commands to generate project files for Eclipse and Emacs respectively.
+* Use the `eclipse-formatter-javascript.xml` formatter for JavaScript files, and the `eclipse-formatter-scala.properties` formatter for Scala files. Note that the Scala formatter is the default that Scala IDE provides by default.
 
 ## Credits
 
