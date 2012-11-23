@@ -116,21 +116,17 @@ class GitstickServlet
     handleRequest(user toString)
   }
 
-  put("/user/:oldpassword", isJsonRequest(request)) {
-    // request body should contain user in json format
-    // FIXME username in jsonUser is not checked; a user can change other users' passwords
-    // TODO check :oldpassword is empty in open mode
-    val password = params get ("oldpassword")
+  put("/user", isJsonRequest(request)) {
     val jsonUser = request body
 
-    handleRequest {
-      if (isSecure)
-        userList authenticateAndSetJsonUser (user name, password, jsonUser)
-      else
-        userList setJsonUser (jsonUser)
+    handleUserPut(jsonUser)
+  }
 
-      repo.saveUsers("updated user '" + (user name) + "'")(user)
-    }
+  put("/user/:oldpassword", isJsonRequest(request)) {
+    val oldPassword = params get ("oldpassword")
+    val jsonUser = request body
+
+    handleUserPut(jsonUser, oldPassword)
   }
 
   // navigation URLs
@@ -203,6 +199,23 @@ class GitstickServlet
     // TODO remove later
     log warn ("Still in development!")
   }
+
+  def handleUserPut(jsonUser: String, oldPassword: Option[String] = None) = {
+    handleRequest {
+      if (isSameUser(jsonUser, user)) {
+        if (isSecure)
+          userList authenticateAndSetJsonUser (user name, oldPassword, jsonUser)
+        else
+          userList setJsonUser (jsonUser)
+
+        repo.saveUsers("updated user '" + (user name) + "'")(user)
+      } else
+        log warn ("Invalid PUT to /user")
+    }
+  }
+
+  def isSameUser(jsonRequestBody: String, user: User): Boolean =
+    User.parseJson(jsonRequestBody).name == user.name
 
   def isJsonRequest(request: javax.servlet.http.HttpServletRequest): Boolean = {
     val contentType = request.getContentType

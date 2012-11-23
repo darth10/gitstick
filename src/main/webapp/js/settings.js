@@ -104,10 +104,15 @@ function onSaveClick() {
     newUser['salt'] = newSalt;
     newUser['password'] = hashOf(newSalt + newPassword);
   };
+  
+  var userUrl = 'user';
+  if (password != undefined) {
+    userUrl += '/' + password;
+  };
 
   $.ajax({
     type : 'PUT',
-    url : 'user/' + password,
+    url : userUrl,
     processData : false,
     contentType : 'application/json',
     success : notifyDoneAndLoadUser,
