@@ -84,20 +84,23 @@ function onSaveClick() {
   };
 
   if ($('#oldpassword').length != 0) {
+    // validate password
     var passwordHash = hashOf(salt + password);
-
+    var valid = false;
+    
     if (passwordHash != oldPasswordHash) {
       notifyErrorAndReset('Invalid password');
-      return;
-    };
-
-    if (newPassword.length == 0) {
+    } else if (newPassword.length == 0) {
       notifyErrorAndReset('Enter a new password');
-      return;
-    };
-
-    if (newPassword != confirmNewPassword) {
+    } else if (newPassword == password) {
+      notifyErrorAndReset('New and existing password must be different');
+    } else if (newPassword != confirmNewPassword) {
       notifyErrorAndReset('New passwords do not match');
+    } else {
+      valid = true;
+    };
+    
+    if (!valid) {
       return;
     };
 
