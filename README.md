@@ -1,4 +1,4 @@
-# gitstick
+# gitstick [![Build Status](https://travis-ci.org/darth10/gitstick.png)](https://travis-ci.org/darth10/gitstick)
 
 gitstick is a distributed bug tracking tool integrated with git.
 It provides a web server and command line interface for managing tickets.
