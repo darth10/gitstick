@@ -9,16 +9,14 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns
 			org.gitstick.web.GitstickServlet
 		</servlet-class>
 		
-		<!-- TODO remove value! -->
 		<init-param>
 			<param-name>RepositoryPath</param-name>
-			<param-value>/pi/pymatter/Projects/testbugs</param-value>
+			<param-value></param-value>
 		</init-param>
 		
-		<!-- TODO change value! -->
 		<init-param>	
 			<param-name>OpenMode</param-name>
-			<param-value>1</param-value>
+			<param-value>0</param-value>
 		</init-param>
 		
 		<init-param>	
