@@ -2,7 +2,7 @@ import AssemblyKeys._
 
 name := "gitstick"
 
-version := "0.5.1"
+version := "0.5.2"
 
 scalaVersion := "2.9.1"
 
@@ -11,7 +11,7 @@ scalacOptions ++= Seq("-deprecation", "-unchecked")
 libraryDependencies ++= Seq(
   "org.scalatra" %% "scalatra" % "2.0.3",
   "org.scalatra" %% "scalatra-scalate" % "2.0.3",
-  "org.eclipse.jgit" % "org.eclipse.jgit" % "1.1.0.201109151100-r", 
+  "org.eclipse.jgit" % "org.eclipse.jgit" % "1.1.0.201109151100-r",
   "org.scalatra" %% "scalatra-specs2" % "2.0.4" % "test",
   "junit" % "junit" % "4.8.1" % "test",
   "org.scalatra" %% "scalatra-auth" % "2.0.4",
@@ -34,23 +34,23 @@ resolvers ++= Seq(
   "JGit Repository" at "http://download.eclipse.org/jgit/maven"
 )
 
-resourceGenerators in Compile <+= (resourceManaged, baseDirectory) map { (managedBase, base) => 
-  val webappBase = base / "src" / "main" / "webapp" 
-  for { 
-    (from, to) <- webappBase ** "*" x rebase(webappBase, managedBase / "main" / "webapp") 
-  } yield { 
-    Sync.copy(from, to) 
-    to 
-  } 
+resourceGenerators in Compile <+= (resourceManaged, baseDirectory) map { (managedBase, base) =>
+  val webappBase = base / "src" / "main" / "webapp"
+  for {
+    (from, to) <- webappBase ** "*" x rebase(webappBase, managedBase / "main" / "webapp")
+  } yield {
+    Sync.copy(from, to)
+    to
+  }
 }
 
-mergeStrategy in assembly ~= { 
-  old => { 
-    case "META-INF/NOTICE.txt" => MergeStrategy.filterDistinctLines 
-    case "META-INF/NOTICE" => MergeStrategy.filterDistinctLines 
-    case "META-INF/LICENSE.txt" => MergeStrategy.filterDistinctLines 
-    case "META-INF/LICENSE" => MergeStrategy.filterDistinctLines 
-    case "about.html" => MergeStrategy.discard 
-    case x => old(x) 
+mergeStrategy in assembly ~= {
+  old => {
+    case "META-INF/NOTICE.txt" => MergeStrategy.filterDistinctLines
+    case "META-INF/NOTICE" => MergeStrategy.filterDistinctLines
+    case "META-INF/LICENSE.txt" => MergeStrategy.filterDistinctLines
+    case "META-INF/LICENSE" => MergeStrategy.filterDistinctLines
+    case "about.html" => MergeStrategy.discard
+    case x => old(x)
   }
 }
