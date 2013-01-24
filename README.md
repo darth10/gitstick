@@ -38,7 +38,9 @@ For example, if your git user name is configured as *MyUser*, then your gitstick
 
     $ gitstick
 
-Open `http://localhost:8080/` in a browser, and enter your username and password.
+Open `http://localhost:8080/` in a browser, and enter your username and password. Here's a screenshot of the UI.
+
+![gitstick](https://raw.github.com/darth10/gitstick/master/imgs/screenshot1.png)
 
 Note that you should use your default username and password the first time you run gitstick in a repository.
 In open mode, the password is not checked. To use open mode, specify the `--open` option.
